@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chhatra Bandhu AI - Tuitioni Educational Companion</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Space Grotesk', 'Hind Siliguri', 'Noto Sans Devanagari', sans-serif;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #020617 100%);
+    }
+  </style>
+</head>
+<body class="gradient-bg text-slate-100 min-h-screen selection:bg-sky-500 selection:text-white">
+
+  <!-- Header & Language Selector -->
+  <header class="border-b border-slate-800/80 backdrop-blur-md sticky top-0 z-50 bg-slate-950/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-sky-500 flex items-center justify-center shadow-lg shadow-sky-500/20">
+          <i class="fa-solid fa-graduation-cap text-white text-lg"></i>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold tracking-tight text-white" id="nav-title">Chhatra Bandhu AI</h1>
+          <p class="text-[10px] text-sky-400 font-semibold uppercase tracking-wider" id="nav-subtitle">Tuitioni Companion</p>
+        </div>
+      </div>
+      
+      <!-- Language Selector Buttons -->
+      <div class="flex items-center space-x-2 bg-slate-900/90 border border-slate-800 p-1 rounded-full">
+        <button onclick="setLanguage('en')" id="lang-en" class="px-3 py-1 text-xs rounded-full transition-all duration-200 bg-sky-600 text-white font-medium">
+          🇬🇧 English
+        </button>
+        <button onclick="setLanguage('bn')" id="lang-bn" class="px-3 py-1 text-xs rounded-full transition-all duration-200 text-slate-400 hover:text-white font-medium">
+          🇧🇩 বাংলা
+        </button>
+        <button onclick="setLanguage('hi')" id="lang-hi" class="px-3 py-1 text-xs rounded-full transition-all duration-200 text-slate-400 hover:text-white font-medium">
+          🇮🇳 हिन्दी
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Text Area -->
+      <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div class="inline-flex items-center space-x-2 bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-full">
+          <span class="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></span>
+          <span class="text-xs font-semibold text-sky-300 tracking-wider uppercase" id="hero-badge">Now Available for West Bengal Board & More</span>
+        </div>
+        
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight" id="hero-title">
+          Your Democratic <span class="text-sky-400">Socratic</span> Private Coach.
+        </h2>
+        
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed" id="hero-desc">
+          Democratizing high-quality, localized tuition for every underprivileged student. Speak, explore, experiment, and pass with global certifications—completely free.
+        </p>
+
+        <!-- Dynamic Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+          <a href="/download" class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-sky-500 hover:bg-sky-400 active:bg-sky-600 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-sky-500/25 transition duration-200 hover:-translate-y-0.5">
+            <i class="fa-brands fa-android text-2xl"></i>
+            <div class="text-left">
+              <p class="text-[10px] text-sky-100 uppercase tracking-wider font-semibold" id="btn-download-sub">Download for Android</p>
+              <p class="text-lg" id="btn-download-main">Download App (APK)</p>
+            </div>
+          </a>
+          <a href="#how-to-install" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-300 px-6 py-4 rounded-2xl transition duration-200" id="btn-guide">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>How to Install</span>
+          </a>
+        </div>
+
+        <div class="flex items-center justify-center lg:justify-start space-x-6 text-xs text-slate-400 pt-2" id="hero-stats">
+          <div class="flex items-center space-x-2">
+            <i class="fa-solid fa-check-double text-sky-400"></i>
+            <span>Safe & Verified APK</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i class="fa-solid fa-circle-nodes text-sky-400"></i>
+            <span>Offline-First Optimized</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- App Mockup Visualizer -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative w-72 sm:w-80 h-[600px] bg-slate-950 border-[8px] border-slate-800 rounded-[40px] shadow-2xl shadow-sky-500/10 overflow-hidden">
+          <!-- Speaker/Camera Notch -->
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-800 rounded-b-2xl z-20 flex items-center justify-center space-x-2">
+            <div class="w-2.5 h-2.5 bg-slate-900 rounded-full"></div>
+            <div class="w-8 h-1 bg-slate-900 rounded-full"></div>
+          </div>
+          
+          <!-- Mock Screen Content -->
+          <div class="w-full h-full p-4 pt-8 bg-slate-900 flex flex-col justify-between overflow-y-auto">
+            <!-- App Top Bar -->
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div class="flex items-center space-x-2">
+                <div class="w-6 h-6 rounded-md bg-sky-500 flex items-center justify-center">
+                  <i class="fa-solid fa-graduation-cap text-[10px] text-white"></i>
+                </div>
+                <span class="text-xs font-bold text-white">ছাত্রবন্ধু AI</span>
+              </div>
+              <span class="text-[9px] bg-sky-500/10 text-sky-400 font-bold px-1.5 py-0.5 rounded">WBBSE • Class 10</span>
+            </div>
+
+            <!-- Dashboard Welcome -->
+            <div class="my-4 bg-gradient-to-r from-sky-900/30 to-indigo-900/30 border border-sky-800/30 p-3.5 rounded-2xl">
+              <p class="text-xs font-bold text-sky-300" id="mock-welcome-title">স্বাগতম, ছাত্রবন্ধু! 👋</p>
+              <p class="text-[10px] text-slate-300 mt-1 leading-relaxed" id="mock-welcome-desc">টুইশনি প্ল্যাটফর্মে আপনার সক্রেটিক প্রাইভেট কোচ আপনাকে সাহায্য করার জন্য প্রস্তুত।</p>
+            </div>
+
+            <!-- Features Quick View -->
+            <div class="space-y-2 flex-grow">
+              <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2" id="mock-modules-title">Syllabus Study Modules:</p>
+              
+              <!-- Tutor -->
+              <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/60 flex items-start space-x-2">
+                <div class="w-7 h-7 rounded-lg bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
+                  <i class="fa-solid fa-microphone text-emerald-400 text-xs"></i>
+                </div>
+                <div>
+                  <p class="text-[11px] font-bold text-white" id="mock-m1-title">Socratic Chat</p>
+                  <p class="text-[9px] text-slate-400" id="mock-m1-desc">Live Socratic Voice Tutor.</p>
+                </div>
+              </div>
+
+              <!-- Notebook -->
+              <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/60 flex items-start space-x-2">
+                <div class="w-7 h-7 rounded-lg bg-sky-500/10 flex items-center justify-center border border-sky-500/20">
+                  <i class="fa-solid fa-book-open text-sky-400 text-xs"></i>
+                </div>
+                <div>
+                  <p class="text-[11px] font-bold text-white" id="mock-m2-title">Gemini Notebook</p>
+                  <p class="text-[9px] text-slate-400" id="mock-m2-desc">Interactive guides & practice quizzes.</p>
+                </div>
+              </div>
+
+              <!-- Labs -->
+              <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/60 flex items-start space-x-2">
+                <div class="w-7 h-7 rounded-lg bg-purple-500/10 flex items-center justify-center border border-purple-500/20">
+                  <i class="fa-solid fa-flask text-purple-400 text-xs"></i>
+                </div>
+                <div>
+                  <p class="text-[11px] font-bold text-white" id="mock-m3-title">BYJU'S Visual Labs</p>
+                  <p class="text-[9px] text-slate-400" id="mock-m3-desc">Zero-cost kitchen experiments.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer indicator bar -->
+            <div class="w-24 h-1 bg-slate-700 mx-auto rounded-full mt-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Syllabus Modules Grid -->
+    <div class="py-16 border-t border-slate-800/80 mt-12">
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white" id="features-header">Study Modules (গৌরব পাঠশালা)</h3>
+        <p class="text-slate-400 text-sm sm:text-base" id="features-subheader">An educational landscape containing interactive study frameworks built on state-of-the-art Generative AI models.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Tutor Module -->
+        <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl space-y-4 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+            <i class="fa-solid fa-microphone text-emerald-400 text-xl"></i>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-white" id="card-tutor-title">Socratic Chat</h4>
+            <p class="text-xs text-sky-400 font-semibold" id="card-tutor-meta">Voice & Text Socratic AI</p>
+            <p class="text-sm text-slate-400 mt-2 leading-relaxed" id="card-tutor-desc">Live conversational coaching that guides you to find your own solutions rather than just giving answers.</p>
+          </div>
+        </div>
+
+        <!-- Notebook Module -->
+        <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl space-y-4 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center">
+            <i class="fa-solid fa-book-open text-sky-400 text-xl"></i>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-white" id="card-notebook-title">Gemini Notebook</h4>
+            <p class="text-xs text-sky-400 font-semibold" id="card-notebook-meta">Interactive Study Guides</p>
+            <p class="text-sm text-slate-400 mt-2 leading-relaxed" id="card-notebook-desc">Enter any custom educational topic to spawn robust visual notes, interactive quizzes, and instant web searches.</p>
+          </div>
+        </div>
+
+        <!-- Curriculum Module -->
+        <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl space-y-4 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
+            <i class="fa-solid fa-file-invoice text-orange-400 text-xl"></i>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-white" id="card-curr-title">Physics Wallah Mode</h4>
+            <p class="text-xs text-sky-400 font-semibold" id="card-curr-meta">Textbooks & Formulas</p>
+            <p class="text-sm text-slate-400 mt-2 leading-relaxed" id="card-curr-desc">Access standardized curriculum books and interactive physics formula sheet calculators.</p>
+          </div>
+        </div>
+
+        <!-- Labs Module -->
+        <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl space-y-4 hover:border-slate-700 transition">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
+            <i class="fa-solid fa-flask text-purple-400 text-xl"></i>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-white" id="card-labs-title">BYJU'S Visual Labs</h4>
+            <p class="text-xs text-sky-400 font-semibold" id="card-labs-meta">Kitchen Chemistry & Physics</p>
+            <p class="text-sm text-slate-400 mt-2 leading-relaxed" id="card-labs-desc">Step-by-step instructions for zero-cost physics and chemistry experiments using kitchen tools.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Installation Guide Section -->
+    <div id="how-to-install" class="py-12 border-t border-slate-800/80">
+      <div class="bg-slate-900/40 border border-slate-800 rounded-3xl p-8 sm:p-12 max-w-4xl mx-auto space-y-8">
+        <div class="text-center space-y-2">
+          <i class="fa-brands fa-android text-4xl text-sky-400"></i>
+          <h3 class="text-2xl font-bold text-white" id="guide-title">How to Install Chhatra Bandhu AI APK</h3>
+          <p class="text-slate-400 text-sm" id="guide-subtitle">A simple 3-step process to download and install on any Android mobile phone.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+          <!-- Step 1 -->
+          <div class="space-y-3">
+            <div class="w-8 h-8 rounded-full bg-sky-500/10 border border-sky-500/20 flex items-center justify-center font-bold text-sky-400 text-sm">1</div>
+            <h4 class="font-bold text-white text-base" id="step1-title">Download APK</h4>
+            <p class="text-xs text-slate-400 leading-relaxed" id="step1-desc">Click the main 'Download' button above to safely grab the `chhatra-bandhu-ai.apk` file on your device.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="space-y-3">
+            <div class="w-8 h-8 rounded-full bg-sky-500/10 border border-sky-500/20 flex items-center justify-center font-bold text-sky-400 text-sm">2</div>
+            <h4 class="font-bold text-white text-base" id="step2-title">Enable Unknown Sources</h4>
+            <p class="text-xs text-slate-400 leading-relaxed" id="step2-desc">If prompted, allow your web browser or file manager to install applications from 'Unknown Sources' in your Android Settings.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="space-y-3">
+            <div class="w-8 h-8 rounded-full bg-sky-500/10 border border-sky-500/20 flex items-center justify-center font-bold text-sky-400 text-sm">3</div>
+            <h4 class="font-bold text-white text-base" id="step3-title">Open & Start Learning</h4>
+            <p class="text-xs text-slate-400 leading-relaxed" id="step3-desc">Tap the downloaded file inside your downloads folder or notification tray, hit Install, and launch your Tuitioni Companion!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-900 bg-slate-950/60 py-8 text-center text-xs text-slate-500">
+    <p>© 2026 Tuitioni Platforms. All rights reserved.</p>
+    <p class="mt-1" id="footer-tagline">Democratizing Socratic coaching with localized artificial intelligence.</p>
+  </footer>
+
+  <script>
+    // Translation database
+    const t = {
+      en: {
+        navTitle: "Chhatra Bandhu AI",
+        navSubtitle: "Tuitioni Companion",
+        heroBadge: "Now Available for West Bengal Board & More",
+        heroTitle: "Your Democratic <span class='text-sky-400'>Socratic</span> Private Coach.",
+        heroDesc: "Democratizing high-quality, localized tuition for every underprivileged student. Speak, explore, experiment, and pass with global certifications—completely free.",
+        btnDownloadSub: "Download for Android",
+        btnDownloadMain: "Download App (APK)",
+        btnGuide: "How to Install",
+        featuresHeader: "Syllabus Study Modules (গৌরব পাঠশালা)",
+        featuresSubheader: "An educational landscape containing interactive study frameworks built on state-of-the-art Generative AI models.",
+        
+        cardTutorTitle: "Socratic Chat",
+        cardTutorMeta: "Voice & Text Socratic AI",
+        cardTutorDesc: "Live conversational coaching that guides you to find your own solutions rather than just giving answers.",
+        
+        cardNotebookTitle: "Gemini Notebook",
+        cardNotebookMeta: "Interactive Study Guides",
+        cardNotebookDesc: "Enter any custom educational topic to spawn robust visual notes, interactive quizzes, and instant web searches.",
+        
+        cardCurrTitle: "Physics Wallah Mode",
+        cardCurrMeta: "Textbooks & Formulas",
+        cardCurrDesc: "Access standardized curriculum books and interactive physics formula sheet calculators.",
+        
+        cardLabsTitle: "BYJU'S Visual Labs",
+        cardLabsMeta: "Kitchen Chemistry & Physics",
+        cardLabsDesc: "Step-by-step instructions for zero-cost physics and chemistry experiments using kitchen tools.",
+        
+        guideTitle: "How to Install Chhatra Bandhu AI APK",
+        guideSubtitle: "A simple 3-step process to download and install on any Android mobile phone.",
+        step1Title: "Download APK",
+        step1Desc: "Click the main 'Download' button above to safely grab the `chhatra-bandhu-ai.apk` file on your device.",
+        step2Title: "Enable Unknown Sources",
+        step2Desc: "If prompted, allow your web browser or file manager to install applications from 'Unknown Sources' in your Android Settings.",
+        step3Title: "Open & Start Learning",
+        step3Desc: "Tap the downloaded file inside your downloads folder or notification tray, hit Install, and launch your Tuitioni Companion!",
+        footerTagline: "Democratizing Socratic coaching with localized artificial intelligence.",
+        
+        // Mock
+        mockWelcomeTitle: "Welcome, Socratic Learner! 👋",
+        mockWelcomeDesc: "Your Socratic private coach on the Tuitioni Platform is ready to support you.",
+        mockModulesTitle: "Syllabus Study Modules:",
+        mockM1Title: "Socratic Chat",
+        mockM1Desc: "Live Socratic Voice Tutor.",
+        mockM2Title: "Gemini Study Notebook",
+        mockM2Desc: "Interactive study guides, practice quizzes & web search.",
+        mockM3Title: "BYJU'S Visual Labs",
+        mockM3Desc: "Zero-cost kitchen experiments."
+      },
+      bn: {
+        navTitle: "ছাত্রবন্ধু এআই",
+        navSubtitle: "টুইশনি শিক্ষামূলক সহকারী",
+        heroBadge: "পশ্চিমবঙ্গ বোর্ড এবং আরও অনন্যা বিষয়ের জন্য উপলব্ধ",
+        heroTitle: "আপনার গণতান্ত্রিক <span class='text-sky-400'>সক্রেটিক</span> প্রাইভেট কোচ।",
+        heroDesc: "প্রতিটি সুবিধাবঞ্চিত শিক্ষার্থীর জন্য উচ্চ-মানের, স্থানীয় টিউটরিং সহজলভ্য করা। ভয়েস এবং টেক্সটের সাহায্যে শিখুন, সম্পূর্ণ বিনামূল্যে পরীক্ষা এবং বৈশ্বিক ব্যাজ অর্জন করুন।",
+        btnDownloadSub: "অ্যান্ড্রয়েডের জন্য ডাউনলোড করুন",
+        btnDownloadMain: "অ্যাপ ডাউনলোড করুন (APK)",
+        btnGuide: "কীভাবে ইনস্টল করবেন",
+        featuresHeader: "সিলেবাস স্টাডি মডিউল (গৌরব পাঠশালা)",
+        featuresSubheader: "অত্যাধুনিক জেনারেটিভ এআই দ্বারা চালিত আপনার সিলেবাস অনুযায়ী চ্যাপ্টার ভিত্তিক শিক্ষামূলক ল্যাব।",
+        
+        cardTutorTitle: "ছাত্রবন্ধু সক্রেটিক চ্যাট",
+        cardTutorMeta: "ভয়েস ও টেক্সট সক্রেটিক চ্যাট",
+        cardTutorDesc: "সরাসরি উত্তর না দিয়ে আপনাকে সঠিক উত্তরের দিকে পরিচালিত করার জন্য একটি অনন্য লাইভ ভয়েস কথোপকথন কোচ।",
+        
+        cardNotebookTitle: "স্মার্ট স্টাডি নোটবুক",
+        cardNotebookMeta: "ইন্টারেক্টিভ স্টাডি গাইড",
+        cardNotebookDesc: "যেকোনো শিক্ষামূলক বিষয় লিখুন এবং সাথে সাথে চ্যাপ্টার নোট, প্র্যাকটিস কুইজ এবং ওয়েব সার্চ করুন।",
+        
+        cardCurrTitle: "পাঠ্যপুস্তক ও সূত্র মোড",
+        cardCurrMeta: "ডিজিটাল পাঠ্যপুস্তক ও সূত্র সম্ভার",
+        cardCurrDesc: "আপনার বোর্ডের ডিজিটাল পাঠ্যপুস্তক অ্যাক্সেস করুন এবং বিজ্ঞান বা গণিতের সূত্র ক্যালকুলেটর ব্যবহার করুন।",
+        
+        cardLabsTitle: "রান্নাঘর বিজ্ঞান পরীক্ষা",
+        cardLabsMeta: "বিনামূল্যে রান্নাঘর বিজ্ঞান ল্যাব",
+        cardLabsDesc: "আপনার ঘরে থাকা রান্নাঘরের উপাদানের সাহায্যে শূন্য খরচে মজাদার সব বিজ্ঞান পরীক্ষা করুন।",
+        
+        guideTitle: "ছাত্রবন্ধু এআই APK কীভাবে ইনস্টল করবেন",
+        guideSubtitle: "যেকোনো অ্যান্ড্রয়েড মোবাইল ফোনে ডাউনলোড ও ইনস্টল করার সহজ ৩টি ধাপ।",
+        step1Title: "APK ডাউনলোড করুন",
+        step1Desc: "উপরে থাকা 'অ্যাপ ডাউনলোড' বাটনে ক্লিক করে আপনার ফোনে নিরাপদে `chhatra-bandhu-ai.apk` ফাইলটি সংগ্রহ করুন।",
+        step2Title: "Unknown Sources সক্রিয় করুন",
+        step2Desc: "অনুরোধ করা হলে, আপনার অ্যান্ড্রয়েড ফোনের সেটিংস থেকে অজানা উৎস (Unknown Sources) থেকে ইনস্টল করার অনুমতি দিন।",
+        step3Title: "খুলুন এবং পড়াশোনা শুরু করুন",
+        step3Desc: "ডাউনলোড করা ফাইলে ট্যাপ করে ইনস্টল বোতাম টিপুন এবং আপনার নতুন ছাত্রবন্ধু টিউটর শিক্ষামূলক সহকারী চালু করুন!",
+        footerTagline: "স্থানীয় কৃত্রিম বুদ্ধিমত্তার মাধ্যমে শিক্ষাকে সবার জন্য গণতান্ত্রিক ও সহজলভ্য করা।",
+        
+        // Mock
+        mockWelcomeTitle: "স্বাগতম, ছাত্রবন্ধু! 👋",
+        mockWelcomeDesc: "টুইশনি প্ল্যাটফর্মে আপনার সক্রেটিক প্রাইভেট কোচ আপনাকে সাহায্য করার জন্য প্রস্তুত।",
+        mockModulesTitle: "সিলেবাস স্টাডি মডিউল (গৌরব পাঠশালা):",
+        mockM1Title: "ছাত্রবন্ধু সক্রেটিক চ্যাট",
+        mockM1Desc: "লাইভ সক্রেটিক ভয়েস টিউটর।",
+        mockM2Title: "স্মার্ট স্টাডি নোটবুক",
+        mockM2Desc: "স্মার্ট স্টাডি গাইড, প্র্যাকটিস কুইজ এবং ওয়েব সার্চ।",
+        mockM3Title: "রান্নাঘর বিজ্ঞান পরীক্ষা",
+        mockM3Desc: "বিনামূল্যে রান্নাঘর বিজ্ঞান পরীক্ষা।"
+      },
+      hi: {
+        navTitle: "छात्र बंधु एआई",
+        navSubtitle: "ट्यूशन शैक्षिक साथी",
+        heroBadge: "पश्चिम बंगाल बोर्ड और अन्य के लिए उपलब्ध",
+        heroTitle: "आपका लोकतांत्रिक <span class='text-sky-400'>सुकराती</span> निजी कोच।",
+        heroDesc: "प्रत्येक वंचित छात्र के लिए उच्च गुणवत्ता वाले, स्थानीय ट्यूशन को लोकतांत्रिक बनाना। बोलें, सीखें, रसोई प्रयोगशाला प्रयोग करें, और बिल्कुल मुफ्त वैश्विक बैज प्राप्त करें।",
+        btnDownloadSub: "एंड्रॉइड के लिए डाउनलोड करें",
+        btnDownloadMain: "ऐप डाउनलोड करें (APK)",
+        btnGuide: "कैसे स्थापित करें",
+        featuresHeader: "पाठ्यक्रम अध्ययन मॉड्यूल (गौरव पाठशाला)",
+        featuresSubheader: "अत्याधुनिक जनरेटिव एआई मॉडल पर निर्मित इंटरैक्टिव अध्ययन मॉड्यूल का एक समग्र शैक्षिक ढांचा।",
+        
+        cardTutorTitle: "सुकराती चैट",
+        cardTutorMeta: "आवाज और पाठ सुकराती एआई",
+        cardTutorDesc: "सक्रिय बातचीत कोचिंग जो आपको केवल उत्तर देने के बजाय अपने स्वयं के समाधान खोजने के लिए मार्गदर्शन करती है।",
+        
+        cardNotebookTitle: "जेमिनी अध्ययन नोटबुक",
+        cardNotebookMeta: "इंटरैक्टिव अध्ययन गाइड",
+        cardNotebookDesc: "कोई भी शैक्षिक विषय दर्ज करें और तुरंत विस्तृत अध्ययन नोट्स, अभ्यास प्रश्नोत्तरी और वेब खोज परिणाम प्राप्त करें।",
+        
+        cardCurrTitle: "भौतिकी और सूत्र मोड",
+        cardCurrMeta: "पाठ्यपुस्तक और सूत्र",
+        cardCurrDesc: "मानकीकृत पाठ्यक्रम पाठ्यपुस्तकों और इंटरैक्टिव भौतिकी और गणित सूत्र कैलकुलेटर का उपयोग करें।",
+        
+        cardLabsTitle: "दृश्य प्रयोगशाला",
+        cardLabsMeta: "शून्य लागत रसोई विज्ञान प्रयोग",
+        cardLabsDesc: "रसोई के बर्तनों और सामग्रियों का उपयोग करके शून्य-लागत पर भौतिकी और रसायन विज्ञान के मजेदार प्रयोग।",
+        
+        guideTitle: "छात्र बंधु एआई APK कैसे स्थापित करें",
+        guideSubtitle: "किसी भी एंड्रॉइड मोबाइल फोन पर डाउनलोड और इंस्टॉल करने की एक आसान 3-चरणीय प्रक्रिया।",
+        step1Title: "APK डाउनलोड करें",
+        step1Desc: "अपने डिवाइस पर सुरक्षित रूप से `chhatra-bandhu-ai.apk` फ़ाइल प्राप्त करने के लिए ऊपर दिए गए मुख्य 'डाउनलोड' बटन पर क्लिक करें।",
+        step2Title: "Unknown Sources सक्षम करें",
+        step2Desc: "यदि संकेत दिया जाए, तो अपने एंड्रॉइड सेटिंग्स में 'Unknown Sources' से एप्लिकेशन इंस्टॉल करने की अनुमति दें।",
+        step3Title: "खोलें और सीखना शुरू करें",
+        step3Desc: "डाउनलोड फ़ोल्डर में जाकर फ़ाइल पर टैप करें, इंस्टॉल पर क्लिक करें और अपने छात्र बंधु साथी को शुरू करें!",
+        footerTagline: "स्थानीय कृत्रिम बुद्धिमत्ता के साथ सुकराती कोचिंग को लोकतांत्रिक बनाना।",
+        
+        // Mock
+        mockWelcomeTitle: "स्वागत है, छात्र बंधु! 👋",
+        mockWelcomeDesc: "ट्यूशन प्लेटफॉर्म पर आपका सुकराती निजी कोच आपकी मदद के लिए तैयार है।",
+        mockModulesTitle: "पाठ्यक्रम अध्ययन मॉड्यूल (गौरव पाठशाला):",
+        mockM1Title: "सुकराती चैट",
+        mockM1Desc: "लाइव सुकराती वॉयस ट्यूटर।",
+        mockM2Title: "जेमिनी अध्ययन नोटबुक",
+        mockM2Desc: "इंटरैक्टिव अध्ययन गाइड, अभ्यास प्रश्नोत्तरी और वेब खोज।",
+        mockM3Title: "दृश्य प्रयोगशाला",
+        mockM3Desc: "शून्य लागत रसोई विज्ञान प्रयोग।"
+      }
+    };
+
+    function setLanguage(lang) {
+      // Toggle button active classes
+      ['en', 'bn', 'hi'].forEach(l => {
+        const btn = document.getElementById('lang-' + l);
+        if (l === lang) {
+          btn.className = "px-3 py-1 text-xs rounded-full transition-all duration-200 bg-sky-600 text-white font-medium";
+        } else {
+          btn.className = "px-3 py-1 text-xs rounded-full transition-all duration-200 text-slate-400 hover:text-white font-medium";
+        }
+      });
+
+      const current = t[lang];
+
+      // Main Text
+      document.getElementById('nav-title').innerText = current.navTitle;
+      document.getElementById('nav-subtitle').innerText = current.navSubtitle;
+      document.getElementById('hero-badge').innerText = current.heroBadge;
+      document.getElementById('hero-title').innerHTML = current.heroTitle;
+      document.getElementById('hero-desc').innerText = current.heroDesc;
+      document.getElementById('btn-download-sub').innerText = current.btnDownloadSub;
+      document.getElementById('btn-download-main').innerText = current.btnDownloadMain;
+      document.getElementById('btn-guide').querySelector('span').innerText = current.btnGuide;
+      
+      document.getElementById('features-header').innerText = current.featuresHeader;
+      document.getElementById('features-subheader').innerText = current.featuresSubheader;
+      
+      // Cards
+      document.getElementById('card-tutor-title').innerText = current.cardTutorTitle;
+      document.getElementById('card-tutor-meta').innerText = current.cardTutorMeta;
+      document.getElementById('card-tutor-desc').innerText = current.cardTutorDesc;
+      
+      document.getElementById('card-notebook-title').innerText = current.cardNotebookTitle;
+      document.getElementById('card-notebook-meta').innerText = current.cardNotebookMeta;
+      document.getElementById('card-notebook-desc').innerText = current.cardNotebookDesc;
+      
+      document.getElementById('card-curr-title').innerText = current.cardCurrTitle;
+      document.getElementById('card-curr-meta').innerText = current.cardCurrMeta;
+      document.getElementById('card-curr-desc').innerText = current.cardCurrDesc;
+      
+      document.getElementById('card-labs-title').innerText = current.cardLabsTitle;
+      document.getElementById('card-labs-meta').innerText = current.cardLabsMeta;
+      document.getElementById('card-labs-desc').innerText = current.cardLabsDesc;
+      
+      // Guide
+      document.getElementById('guide-title').innerText = current.guideTitle;
+      document.getElementById('guide-subtitle').innerText = current.guideSubtitle;
+      document.getElementById('step1-title').innerText = current.step1Title;
+      document.getElementById('step1-desc').innerText = current.step1Desc;
+      document.getElementById('step2-title').innerText = current.step2Title;
+      document.getElementById('step2-desc').innerText = current.step2Desc;
+      document.getElementById('step3-title').innerText = current.step3Title;
+      document.getElementById('step3-desc').innerText = current.step3Desc;
+      document.getElementById('footer-tagline').innerText = current.footerTagline;
+
+      // Mock Interface inside the phone
+      document.getElementById('mock-welcome-title').innerText = current.mockWelcomeTitle;
+      document.getElementById('mock-welcome-desc').innerText = current.mockWelcomeDesc;
+      document.getElementById('mock-modules-title').innerText = current.mockModulesTitle;
+      document.getElementById('mock-m1-title').innerText = current.mockM1Title;
+      document.getElementById('mock-m1-desc').innerText = current.mockM1Desc;
+      document.getElementById('mock-m2-title').innerText = current.mockM2Title;
+      document.getElementById('mock-m2-desc').innerText = current.mockM2Desc;
+      document.getElementById('mock-m3-title').innerText = current.mockM3Title;
+      document.getElementById('mock-m3-desc').innerText = current.mockM3Desc;
+    }
+
+    // Default to Bengali or detect region browser lang if available
+    window.onload = function() {
+      const userLang = navigator.language || navigator.userLanguage;
+      if (userLang.startsWith('bn')) {
+        setLanguage('bn');
+      } else if (userLang.startsWith('hi')) {
+        setLanguage('hi');
+      } else {
+        setLanguage('en');
+      }
+    };
+  </script>
+</body>
+</html>

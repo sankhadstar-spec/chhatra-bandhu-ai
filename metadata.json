@@ -1,0 +1,11 @@
+{
+  "name": "Remix: Chhatra Bandhu AI",
+  "description": "A free, multilingual Socratic AI tutor for Indian students, specializing in West Bengal and national board curricula.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

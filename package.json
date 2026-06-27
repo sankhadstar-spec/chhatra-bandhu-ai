@@ -1,0 +1,18 @@
+{
+  "name": "chhatra-bandhu-ai-web",
+  "version": "1.0.0",
+  "description": "Chhatra Bandhu AI Web Portal and App Distribution Hub",
+  "main": "server.ts",
+  "type": "module",
+  "scripts": {
+    "build": "mkdir -p public && (cp /.build-outputs/app-debug.apk public/app-debug.apk || cp app/build/outputs/apk/debug/app-debug.apk public/app-debug.apk || touch public/app-debug.apk)",
+    "start": "node server.ts"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.24"
+  }
+}
