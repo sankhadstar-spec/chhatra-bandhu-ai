@@ -9,6 +9,7 @@
     "start": "node server.ts"
   },
   "dependencies": {
+    "@remix-run/dev": "^2.17.5",
     "express": "^4.19.2"
   },
   "devDependencies": {
