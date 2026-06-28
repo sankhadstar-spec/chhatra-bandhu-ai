@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "mkdir -p public && (cp /.build-outputs/app-debug.apk public/app-debug.apk || cp app/build/outputs/apk/debug/app-debug.apk public/app-debug.apk || touch public/app-debug.apk)",
-    "start": "node server.ts"
+    "start": "node server.ts",
+    "vercel-build": "npm install --legacy-peer-deps && remix build"
   },
   "dependencies": {
     "@remix-run/dev": "^2.17.5",
